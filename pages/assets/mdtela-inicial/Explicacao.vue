@@ -23,7 +23,7 @@
   </script>
 
 
-<style >
+<style scoped >
 
 .corpo2 {
   position: absolute;

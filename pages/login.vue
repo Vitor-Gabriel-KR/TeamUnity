@@ -51,6 +51,11 @@ body{
   padding: 0;
   background: linear-gradient(to right, #293C6C 45%, #ffffff 25%, #ffffff 75%);
 }
+</style>
+
+
+<style scoped>
+
 .espaco {
   display: flex;
   justify-content: space-between;
@@ -60,11 +65,6 @@ body{
   display: flex;
   flex-direction: column;
 }
-</style>
-
-
-<style scoped>
-
 .custom-button {
   background-color: #293C6C;
   border: 2px solid #293C6C; 
