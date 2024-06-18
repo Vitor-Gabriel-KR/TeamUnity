@@ -1,52 +1,9 @@
 <template>
   <div class="divisor">
-    <div class="sidebar">
-      <div class="funcao">
-        <h2 class="cargo">Gerente - 1</h2>
-        <div class="funcionarios">
-          <img src="" alt="photo" class="photo" >
-          <p class="status"></p>
-        </img>
-          <div class="textos">
-            <p class="nome1">Nome </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="funcao">
-        <h2 class="cargo">TeamLeaders - 4</h2>
-        <div class="funcionarios">
-          <img src="" alt="photo" class="photo" >
-          <p class="status"></p>
-        </img>
-          <div class="textos">
-            <p class="nome1">Nome </p>
-          </div>
-        </div>
-        <div class="funcionarios">
-          <img src="" alt="photo" class="photo" >
-          <p class="status"></p>
-        </img>
-          <div class="textos">
-            <p class="nome1">Nome </p>
-          </div>
-        </div>
-        <div class="funcionarios">
-          <img src="" alt="photo" class="photo" >
-          <p class="status"></p>
-        </img>
-          <div class="textos">
-            <p class="nome1">Nome </p>
-          </div>
-        </div>
-        
-
-
-      </div>
-    </div>
+    <div class="caixa"></div>
     
     <div class="container">
-      <div class="quadrado">
+      <div class="quadrado" :style="{ height: quadradoHeight + 'px' }">
         <div class="conteudo">
           <img src="" alt="Imagem" class="imagem" />
           <div class="texto">
@@ -67,6 +24,7 @@
           <li class="campo-texto">Endereço :</li>
           <span class="linha-texto">______________ Numero:</span>
         </div>
+        <button class="custom-button" v-if="primeiroBotaoVisivel" @click="alterarTamanho">\/</button>
         <div class="campo1">
           <h2 class="titulo">Informações pessoais :</h2>
           <li class="campo-texto">Nome completo :</li>
@@ -105,122 +63,56 @@
           <li class="campo-texto">Relação com o Contato :</li>
           <li class="campo-texto">Telefone do Contato de Emergência :</li>
         </div>
-        <button class="custom-button" @click="onClick">^</button>
+        <button class="custom-button" v-if="!primeiroBotaoVisivel" @click="alterarTamanho">\/</button>
       </div>
+      
     </div>
   </div>
 </template>
-<script></script>
-
+<script>
+export default {
+  data() {
+    return {
+      quadradoHeight: 520,
+      primeiroBotaoVisivel: true
+    };
+  },
+  methods: {
+    alterarTamanho() {
+      if (this.quadradoHeight === 520) {
+        this.quadradoHeight = 1450;
+        this.primeiroBotaoVisivel = false;
+      } else {
+        this.quadradoHeight = 520;
+        this.primeiroBotaoVisivel = true;
+      }
+    }
+  }
+};
+</script>
 <style scoped>
-.nome1 {
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  font-weight: 500;
-  width: 180px;
-  white-space: nowrap;
-  overflow: hidden; 
-  text-overflow: ellipsis;
-}
-.status{
-  height: 12px;
-  width: 12px;
-  background-color: #33FB3B;
-  border-radius: 50%;
-  position: absolute;
-  margin-left:52px;
-  margin-top: 65px;
-}
-.funcao {
-margin-top: 20px;
-margin-left:30px;
-}
-.funcionarios {
-  display: flex;
-  align-items: center;
-
-}
-.photo {
-  height: 50px;
-  width: 50px;
-  margin-right: 20px;
-  margin-left:15px;
-  margin-top: 15px;
-  background-color: #6D7993;
-  border-radius: 50%;
-}
-.cargo{
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  font-weight: lighter;
-  margin-bottom: 10px;
-}
-.textos {
-  color: black;
-}
-.nomes {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.caixa{
+  margin-bottom: 15px;
 }
 .container {
   display: flex;
+  position: relative; 
   justify-content: center;
   align-items: center;
-  overflow-y: auto; /* Adicionando scroll apenas para o conteúdo principal */
+  margin-top: 50px;
+  margin-left: 220px;
 }
 
-.sidebar {
-  width: 300px; /* Largura da barra lateral */
-  height: 1350px;
-  background-color: #d5d5d5; /* Cor cinza */
-  float: right;
-  overflow-y: auto;
-  max-height: calc( 1350px - 20px);
-  margin: 0; 
-  padding: 0;
-  top: 0;
-  left: 0;
-}
-/* Adicionando estilo à barra de rolagem da barra lateral */
-.sidebar::-webkit-scrollbar {
-  width: 15px; /* Largura da barra de rolagem */
-}
-
-/* Mudando a cor da barra de rolagem da barra lateral */
-.sidebar::-webkit-scrollbar-track {
-  background: #293C6C; /* Cor do fundo da barra de rolagem */
-}
-
-/* Mudando a cor do indicador da barra de rolagem da barra lateral */
-.sidebar::-webkit-scrollbar-thumb {
-  background: #FFFFFF; /* Cor do indicador da barra de rolagem */
-  border-radius: 10px; /* Borda do indicador */
-}
-
-/* Mudando a cor quando o mouse está sobre a barra de rolagem da barra lateral */
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background: #CCCCCC; /* Cor do indicador quando o mouse está sobre ele */
-}
 .quadrado {
-  background-color: #293c6c;
+  background: rgb(195,119,34);
+  background: linear-gradient(0deg, rgba(195,119,34,1) 0%, rgba(174,104,54,1) 7%, rgba(156,91,71,1) 16%, rgba(136,77,90,1) 28%, rgba(117,63,108,1) 43%, rgba(92,45,132,1) 65%, rgba(69,29,154,1) 100%);
   width: 600px;
-  height: 1400px;
+  height: 520px;
   padding: 10px;
   position: relative;
   border-radius: 20px;
-}
-
-.quadrado::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1f05c0;
-  opacity: 0.2;
-  border-radius: 20px;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
 }
 
 .conteudo {
@@ -242,15 +134,15 @@ margin-left:30px;
   color: white;
 }
 
-.nome {
+.nomes {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .detalhes {
   font-size: 18px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .campo1 {
@@ -267,15 +159,18 @@ margin-left:30px;
 }
 
 .campo-texto {
-  color: white;
+  color: rgb(255, 255, 255);
   margin-top: 8px;
+  font-size: 17px;
   margin-left: 30px;
 }
+
 .linha-texto {
   color: white;
   margin-top: 8px;
   margin-left: 50px;
 }
+
 .anexo-linha {
   display: flex;
   align-items: center;
@@ -285,9 +180,11 @@ margin-left:30px;
   margin-left: 15px;
   color: white;
 }
+
 .campo1 li {
   list-style-type: none;
 }
+
 .custom-button {
   width: 80%;
   height: 30px;
@@ -303,11 +200,16 @@ margin-left:30px;
   margin-left: 10%;
 }
 
-.custom-button:active {
-  transform: scale(2.95);
+.custom-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
+
+.custom-button:active {
+  transform: scale(0.95);
+}
+
 ::-webkit-scrollbar {
-  width: 15px; 
+  width: 15px;
 }
 
 ::-webkit-scrollbar-track {
@@ -315,8 +217,8 @@ margin-left:30px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FFFFFF;
-  border-radius: 10px; 
+  background: #eeeeee;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
