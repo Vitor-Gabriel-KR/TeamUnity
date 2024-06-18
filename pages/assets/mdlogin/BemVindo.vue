@@ -12,7 +12,7 @@ defineProps<{
       para manter-se conectado com 
       a gente efetue o login no nosso sistema
     </h3>
-    <button class="custom-button">ENTRAR</button>
+    <NuxtLink to="/tela-principal" class="custom-button">ENTRAR</NuxtLink>
   </div>
 </div>
 </template>
@@ -77,8 +77,9 @@ h3 {
   margin: 10px; 
   margin-left: auto; 
   margin-right: auto; 
-  left: 26%;
+  left: 33%;
   bottom: 30%;
+  text-decoration: none;
 }
 
 .custom-button:hover {

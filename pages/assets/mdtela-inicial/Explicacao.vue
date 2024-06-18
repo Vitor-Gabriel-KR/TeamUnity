@@ -11,7 +11,7 @@
   <div class="container2">
   <p>Team Unity é uma ferramenta web de gestão de funcionários altamente personalizável, projetada para oferecer praticidade e inovação aos gestores. </p>
   <p>Facilita a promoção da coesão da equipe de maneira eficiente.</p>
-  <button class="botao">Cadastrar</button>
+  <NuxtLink to="/login" class="botao">Cadastrar</NuxtLink>
 </div>
 </div>
 </div>

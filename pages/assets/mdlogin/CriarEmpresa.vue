@@ -11,8 +11,8 @@ defineProps<{
         Crie e configure sua empresa com facilidade 
         Simplifique a gestão de sua equipe
         e otimize processos
-    </h3>  
-    <button class="custom-button">Criar </button>
+    </h3>
+    <NuxtLink to="/tela-principal" class="custom-button">Criar</NuxtLink>
     <p >Ou <a href="https://www.example.com">entre</a> em sua empresa.</p>
   </div>
 </template>
@@ -30,7 +30,7 @@ p{
   position: relative; 
   left: 50%; 
   transform: translateX(-50%);
-  margin-top: 10px; 
+  margin-top: 20px; 
   text-align: center;
 }
 h2 {
@@ -83,8 +83,9 @@ h3 {
   margin: 10px; 
   margin-left: auto; 
   margin-right: auto; 
-  left: 26%;
+  left: 37%;
   bottom: 30%;
+  text-decoration: none;
   
 }
 

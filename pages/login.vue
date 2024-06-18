@@ -45,7 +45,7 @@ const inverterMostrarPrimeiros = () => {
   
 </template>
 
-<style>
+<style >
 body{
   margin: 0;
   padding: 0;

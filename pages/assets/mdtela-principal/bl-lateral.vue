@@ -3,44 +3,45 @@
     <div class="barra-lateral">
       <div class="perfil">
         <div class="foto-perfil">
-          <img src="" alt="Foto do Perfil" />
+          <img src="/imagens/admin.jpg" alt="Foto do Perfil" />
         </div>
         <div class="info-perfil">
-          <p class="nome-perfil">Nome</p>
-          <p class="cargo-perfil">Cargo</p>
+          <p class="nome-perfil">Vitor </p>
+          <p class="cargo-perfil">Admin</p>
         </div>
       </div>
+      <p class="linha"></p>
       <p class="titulo-secao">Seus quadros</p>
   
       <div class="secao-interativa">
         <div class="item-interativo">
           Funcionários
         </div>
-        <div class="item-interativo2">
-          Projetos
-        </div>
       </div>
+      
       <p class="titulo-secao">Cadastros</p>
       <div class="secao-interativa">
-        <div class="item-interativo">
-          Funcionários
-        </div>
-        <div class="item-interativo2">
-          Projetos
-        </div>
+        <div class="item-interativo" >
+          <a class ="a" href="http://127.0.0.1:8000/funcionario/?format=api">Funcionários</a>
       </div>
-      <div class="secao-gestao">
-        <p class="titulo-secao">Gestão De Membros</p>
-        <p class="titulo-secao">Gestão De Equipes</p>
-        <p class="titulo-secao">Configurações Dos Cards</p>
       </div>
+
+      <div class="status-container">
+    <h2 class="status-title">Status</h2>
+    <ul class="status-list">
+      <li class="status-item">
+        <span class="service-name">API:</span>
+        <span class="status-online">Online</span>
+      </li>
+      <li class="status-item">
+        <span class="service-name">Cadastro:</span>
+        <span class="status-online">Online</span>
+      </li>
+    </ul>
+  </div>
     </div>
     <div class="segundo-header">
-      <p class="nome-empresa">Nome da empresa</p>
-      <div class="barra-pesquisa-container">
-        <input type="text" class="barra-pesquisa" placeholder="Pesquisar" />
-        <button class="botao-filtro">Filtro</button>
-      </div>
+      <p class="nome-empresa">Iluminaty Comporations - empresa com foco na dominação global </p>
     </div>
     <div class="caixab">
     </div>
@@ -48,6 +49,50 @@
 </template>
 
 <style scoped>
+.status-container {
+  background-color: #b9b9b9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: auto;
+}
+
+.status-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.status-list {
+  list-style: none;
+  padding: 0;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.status-item:last-child {
+  border-bottom: none;
+}
+
+.service-name {
+  font-size: 18px;
+  color: #555;
+}
+
+.status-online {
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+}
 .header {
   background-color: #2A2E34;
   display: flex;
@@ -71,11 +116,15 @@
   margin: 0;
   font-size: 1rem;
 }
-
+.linha{
+  height: 1px;
+  width: 150px;
+  background-color:  #727272;
+}
 .barra-lateral {
   width: 210px;
   height: calc(100vh - 40px); 
-  background-color: #323535;
+  background-color: #D5D5D5;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -94,6 +143,7 @@
   margin-bottom: 20px;
   margin-left: 10px;
   align-self: flex-start;
+  
 }
 
 .foto-perfil {
@@ -103,6 +153,7 @@
   overflow: hidden;
   margin-right: 10px;
   background-color: #9bb0ca;
+  border: 2px solid #727272;
 }
 
 .foto-perfil img {
@@ -118,7 +169,7 @@
 
 .nome-perfil {
   font-size: 28px;
-  color: rgb(255, 255, 255);
+  color: black;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -132,11 +183,12 @@
 }
 
 .titulo-secao {
-  font-size: 20px;
-  color: rgb(255, 255, 255);
+  font-size: 21px;
+  color: black;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-right: 22px;
+  margin-right: 70px;
+  margin-left: 20px;
 }
 
 .secao-interativa {
@@ -152,51 +204,28 @@
   width: 100%;
   padding: 5px 10px;
   margin: 5px 0;
-  background: rgb(165, 138, 223) ;
-  color: rgb(255, 255, 255);
+  background: rgb(177, 177, 177) ;
+  color: black;
   cursor: pointer;
   text-align: left;
   border-radius: 5px;
   font-size: 18px;
 }
-
-.item-interativo2 {
-  width: 100%;
-  padding: 5px 10px;
-  margin: 5px 0;
-  background-color: #ecce96;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  text-align: left;
-  border-radius: 5px;
-  font-size: 18px;
+.a{
+  text-decoration: none;
 }
-
 .item-interativo:hover {
-  background-color: #ecce96;
+  background-color: #727272;
 }
 .item-interativo2:hover {
-  background: rgb(165, 138, 223) ;
-}
-
-.secao-gestao {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 65px;
-  
-}
-
-.secao-gestao .titulo-secao {
-  margin-bottom: 1px;
-  font-size: 16px;
+  background: #727272 ;
 }
 
 .segundo-header {
   width: calc(100% - 210px); 
   height: 65px;
-  background-color: #293C6C;
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 15%, rgba(255,139,0,1) 26%, rgba(9,9,121,1) 51%);
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -3,94 +3,204 @@
     <div class="caixa"></div>
     
     <div class="container">
-      <div class="quadrado" :style="{ height: quadradoHeight + 'px' }">
-        <div class="conteudo">
-          <img src="" alt="Imagem" class="imagem" />
-          <div class="texto">
-            <p class="nomes">Nome</p>
-            <p class="detalhes">24 anos - Maringá - Paraná</p>
-            <p class="detalhes">Salário R$ 4.200,00 - Gerente RH</p>
-          </div>
+    <div class="quadrado">
+      <div class="conteudo">
+        <img src="/imagens/juan.jpeg" alt="Imagem" class="imagem2"  />
+        <img src="/imagens/DIlma.png" alt="Imagem" class="imagem3" />
+        <img src="/imagens/kratos.png" alt="Imagem" class="imagem4"  />
+        <img src="/imagens/Naruto.png" alt="Imagem" class="imagem5" />
+        <img src="/imagens/YasuoCareca.png" alt="Imagem" class="imagem6" />
+        <div class="texto">
+          <p class="nomes">{{ dadosFuncionario.nome_completo }}</p>
+          <p class="detalhes">{{ (dadosFuncionario.data_nascimento) }} anos - {{ dadosFuncionario.endereco_residencial }}</p>
+          <p class="detalhes">Salário R$ {{ dadosFuncionario.salario }} - {{ dadosFuncionario.cargo }}</p>
         </div>
-        <div class="campo1">
-          <h2 class="titulo">Atual : Gerente de Rh - Departamento X</h2>
-          <li class="campo-texto">- Atual</li>
-          <li class="campo-texto">Trabalhando em -</li>
-        </div>
-        <div class="campo1">
-          <h2 class="titulo">Contato :</h2>
-          <li class="campo-texto">Telefone :</li>
-          <li class="campo-texto">Email :</li>
-          <li class="campo-texto">Endereço :</li>
-          <span class="linha-texto">______________ Numero:</span>
-        </div>
-        <button class="custom-button" v-if="primeiroBotaoVisivel" @click="alterarTamanho">\/</button>
-        <div class="campo1">
-          <h2 class="titulo">Informações pessoais :</h2>
-          <li class="campo-texto">Nome completo :</li>
-          <li class="campo-texto">Data de nascimento :</li>
-          <li class="campo-texto">Cpf :</li>
-          <li class="campo-texto">RG :</li>
-          <li class="campo-texto">Histórico Profissional :</li>
-          <li class="campo-texto">Número da Conta Bancária :</li>
-          <li class="campo-texto">Agência Bancária :</li>
-          <li class="campo-texto">Banco :</li>
-        </div>
-        <div class="campo1">
-          <h2 class="titulo">Documentação :</h2>
-          <li class="campo-texto">Documento de Identidade :</li>
-          <li class="campo-texto">Passaporte :</li>
-          <li class="campo-texto">Comprovante de Residência :</li>
-          <li class="campo-texto">Carteira de Trabalho :</li>
-          <li class="anexo-linha">
-            <span class="linha-texto">______________</span>
-            <input type="file" class="anexo-arquivo" />
-          </li>
-        </div>
-
-        <div class="campo1">
-          <h2 class="titulo">Formação acadêmica :</h2>
-          <li class="campo-texto">Formado em :</li>
-        </div>
-        <div class="campo1">
-          <h2 class="titulo">Informações de Saúde e Segurança :</h2>
-          <li class="campo-texto">Alergias :</li>
-          <li class="campo-texto">Condições Médicas :</li>
-        </div>
-        <div class="campo1">
-          <h2 class="titulo">Contato de Emergência :</h2>
-          <li class="campo-texto">Nome do Contato de Emergência :</li>
-          <li class="campo-texto">Relação com o Contato :</li>
-          <li class="campo-texto">Telefone do Contato de Emergência :</li>
-        </div>
-        <button class="custom-button" v-if="!primeiroBotaoVisivel" @click="alterarTamanho">\/</button>
       </div>
+      <div class="campo1">
+        <h2 class="titulo">Atual: {{ dadosFuncionario.cargo }} - {{ dadosFuncionario.departamento }}</h2>
+        <li class="campo-texto">Trabalhando em: {{ dadosFuncionario.trabalhando_em }}</li>
+      </div>
+      <div class="campo1">
+        <h2 class="titulo">Contato :</h2>
+        <li class="campo-texto">Telefone: {{ dadosFuncionario.telefone }}</li>
+        <li class="campo-texto">Email: {{ dadosFuncionario.email }}</li>
+        <li class="campo-texto">Endereço: {{ dadosFuncionario.endereco_residencial }}</li>
+        <span class="linha-texto">______________ Numero: {{ dadosFuncionario.numero_casa }}</span>
+      </div>
+      <div class="campo1">
+        <h2 class="titulo">Informações pessoais :</h2>
+        <li class="campo-texto">Nome completo: {{ dadosFuncionario.nome_completo }}</li>
+        <li class="campo-texto">Data de nascimento: {{ dadosFuncionario.data_nascimento }}</li>
+        <li class="campo-texto">CPF: {{ dadosFuncionario.cpf }}</li>
+        <li class="campo-texto">RG: {{ dadosFuncionario.rg }}</li>
+        <li class="campo-texto">Histórico Profissional: {{ dadosFuncionario.historico_profissional }}</li>
+        <li class="campo-texto">Número da Conta Bancária: {{ dadosFuncionario.numero_conta_bancaria }}</li>
+        <li class="campo-texto">Agência Bancária: {{ dadosFuncionario.agencia_bancaria }}</li>
+        <li class="campo-texto">Banco: {{ dadosFuncionario.banco }}</li>
+      </div>
+      <div class="campo1">
+        <h2 class="titulo">Documentação :</h2>
+        <li class="campo-texto">Documento de Identidade: {{ dadosFuncionario.documento_identidade }}</li>
+        <li class="campo-texto">Passaporte: {{ dadosFuncionario.passaporte }}</li>
+        <li class="campo-texto">Comprovante de Residência: {{ dadosFuncionario.comprovante_residencia }}</li>
+        <li class="campo-texto">Carteira de Trabalho: {{ dadosFuncionario.carteira_trabalho }}</li>
+      </div>
+      <div class="campo1">
+        <h2 class="titulo">Formação acadêmica :</h2>
+        <li class="campo-texto">Formado em: {{ dadosFuncionario.formacao_academica }}</li>
+      </div>
+      <div class="campo1">
+        <h2 class="titulo">Informações de Saúde e Segurança :</h2>
+        <li class="campo-texto">Alergias: {{ dadosFuncionario.alergias }}</li>
+        <li class="campo-texto">Condições Médicas: {{ dadosFuncionario.condicoes_medicas }}</li>
+      </div>
+      <div class="campo1">
+        <h2 class="titulo">Contato de Emergência :</h2>
+        <li class="campo-texto">Nome do Contato de Emergência: {{ dadosFuncionario.contato_emergencia_nome }}</li>
+        <li class="campo-texto">Relação com o Contato: {{ dadosFuncionario.contato_emergencia_relacao }}</li>
+        <li class="campo-texto">Telefone do Contato de Emergência: {{ dadosFuncionario.contato_emergencia_telefone }}</li>
+      </div>
+    </div>
       
     </div>
   </div>
+    <button class="invbox2" @click="setId(2)"></button>
+    <button class="invbox3" @click="setId(3)"></button>
+    <button class="invbox4" @click="setId(4)"></button>
+    <button class="invbox5" @click="setId(5)"></button>
+    <button class="invbox6" @click="setId(6)"></button> 
+    <div :class="{ funcionarios1: true, show: isVisible }">
+        <img src="/imagens/YasuoCareca.png" alt="photo" class="photo1" />
+        <p class="status1"></p>
+        <div class="textos1">
+          <p class="nome2">Yasuo Careca</p>
+        </div>
+      </div>
+    <button class="invbox7" @click="showFuncionario"></button>
 </template>
+
 <script>
+
+import imgJson from '@/imagens/imagens.json'; 
+
 export default {
   data() {
     return {
-      quadradoHeight: 520,
-      primeiroBotaoVisivel: true
+      id: 4, 
+      dadosFuncionario: {},
+      isVisible: false
     };
   },
+  mounted() {
+    this.carregarDadosFuncionario();
+  },
   methods: {
-    alterarTamanho() {
-      if (this.quadradoHeight === 520) {
-        this.quadradoHeight = 1450;
-        this.primeiroBotaoVisivel = false;
-      } else {
-        this.quadradoHeight = 520;
-        this.primeiroBotaoVisivel = true;
-      }
-    }
+    carregarDadosFuncionario() {
+      const idFuncionario = this.id;
+      this.dadosFuncionario = imgJson.find(funcionario => funcionario.id === idFuncionario);
+    },  
+    showFuncionario() {
+      this.isVisible = true;
+    },
+    setId(id) {
+  this.id = id;
+  if (id === 2) {
+    document.querySelector('.imagem2').style.display = 'block';
+    document.querySelector('.imagem3').style.display = 'none';
+    document.querySelector('.imagem4').style.display = 'none';
+    document.querySelector('.imagem5').style.display = 'none';
+    document.querySelector('.imagem6').style.display = 'none';
+  } else if (id === 3) {
+    document.querySelector('.imagem2').style.display = 'none';
+    document.querySelector('.imagem3').style.display = 'block';
+    document.querySelector('.imagem4').style.display = 'none';
+    document.querySelector('.imagem5').style.display = 'none';
+    document.querySelector('.imagem6').style.display = 'none';
+  } else if (id === 4) {
+    document.querySelector('.imagem2').style.display = 'none';
+    document.querySelector('.imagem3').style.display = 'none';
+    document.querySelector('.imagem4').style.display = 'block';
+    document.querySelector('.imagem5').style.display = 'none';
+    document.querySelector('.imagem6').style.display = 'none';
+  } else if (id === 5) {
+    document.querySelector('.imagem2').style.display = 'none';
+    document.querySelector('.imagem3').style.display = 'none';
+    document.querySelector('.imagem4').style.display = 'none';
+    document.querySelector('.imagem5').style.display = 'block';
+    document.querySelector('.imagem6').style.display = 'none';
+  } else if (id === 6) {
+    document.querySelector('.imagem2').style.display = 'none';
+    document.querySelector('.imagem3').style.display = 'none';
+    document.querySelector('.imagem4').style.display = 'none';
+    document.querySelector('.imagem5').style.display = 'none';
+    document.querySelector('.imagem6').style.display = 'block';
+  } else {
+
   }
+  this.carregarDadosFuncionario();
+}
+  },
 };
 </script>
+
+
+
 <style scoped>
+.invbox2{
+  top:57%;
+  left:77%;
+  position: absolute;
+  background-color: #1235ae;
+  height: 70px;
+  width: 300px;
+  opacity: 0;
+}
+.invbox3{
+  top:69%;
+  left:77%;
+  position: absolute;
+  background-color: #1235ae;
+  height: 70px;
+  width: 300px;
+  opacity: 0;
+}
+.invbox4{
+  top:81%;
+  left:77%;
+  position: absolute;
+  background-color: #1235ae;
+  height: 70px;
+  width: 300px;
+  opacity: 0;
+}
+.invbox5{
+  top:93%;
+  left:77%;
+  position: absolute;
+  background-color: #1235ae;
+  height: 70px;
+  width: 300px;
+  opacity: 0;
+}
+.invbox6{
+  top:106%;
+  left:77%;
+  position: absolute;
+  background-color: #1235ae;
+  height: 70px;
+  width: 300px;
+  opacity: 0;
+  z-index: 1;
+}
+.invbox7{
+  top:55%;
+  left:15%;
+  position: absolute;
+  background-color: #1235ae;
+  height: 30px;
+  width: 90px;
+  opacity: 0;
+}
 .caixa{
   margin-bottom: 15px;
 }
@@ -104,10 +214,10 @@ export default {
 }
 
 .quadrado {
-  background: rgb(195,119,34);
-  background: linear-gradient(0deg, rgba(195,119,34,1) 0%, rgba(174,104,54,1) 7%, rgba(156,91,71,1) 16%, rgba(136,77,90,1) 28%, rgba(117,63,108,1) 43%, rgba(92,45,132,1) 65%, rgba(69,29,154,1) 100%);
+  background: rgb(9,9,121);
+  background: linear-gradient(90deg, rgba(9,9,121,1) 44%, rgba(2,0,36,1) 100%);
   width: 600px;
-  height: 520px;
+  height: 1350px;
   padding: 10px;
   position: relative;
   border-radius: 20px;
@@ -121,13 +231,49 @@ export default {
   margin-left: 30px;
 }
 
-.imagem {
+.imagem2 {
   height: 100px;
   width: 100px;
   margin-right: 20px;
   margin-top: 20px;
   background-color: #1235ae;
   border-radius: 50%;
+  display: none;
+}
+.imagem3 {
+  height: 100px;
+  width: 100px;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: #1235ae;
+  border-radius: 50%;
+  display: none;
+}
+.imagem4 {
+  height: 100px;
+  width: 100px;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: #1235ae;
+  border-radius: 50%;
+}
+.imagem5 {
+  height: 100px;
+  width: 100px;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: #1235ae;
+  border-radius: 50%;
+  display: none;
+}
+.imagem6 {
+  height: 100px;
+  width: 100px;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: #1235ae;
+  border-radius: 50%;
+  display: none;
 }
 
 .texto {
@@ -223,5 +369,68 @@ export default {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #CCCCCC;
+}
+.nome2 {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid  #727272;
+}
+.status1 {
+  height: 11px;
+  width: 11px;
+  background-color: #33FB3B;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 48px;
+  margin-top: 45px;
+}
+.funcao1 {
+  margin-top: 15px;
+  margin-left: 25px;
+}
+.funcionarios1 {
+  display: flex;
+  position: absolute;
+  top:103%;
+  left:78%;
+  width: 276px;
+  height: 60px;
+  align-items: center;
+  border: 2px solid  #c5c5c5;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+  opacity: 0;
+  
+}
+.funcionarios1:hover {
+  background-color: #ecce96;
+}
+
+.funcionarios1.show {
+  opacity: 1;
+}
+.photo1 {
+  height: 45px;
+  width: 45px;
+  margin-right: 12px;
+  margin-left: 13px;
+  background-color: #6D7993;
+  border-radius: 50%;
+  border: 2px solid #727272;
+}
+.cargo1 {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+.textos1 {
+  color: black;
 }
 </style>

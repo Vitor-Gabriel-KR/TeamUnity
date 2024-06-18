@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import dashcentral from  './assets/mdtela-principal/dash-central.vue';
-import HeaderComponent from  './assets/mdtela-principal/header.vue';
-import blesquerda from  './assets/mdtela-principal/bl-lateral.vue';
-import bldireita from  './assets/mdtela-principal/bl-direita.vue';
-import cadastrof from  './assets/mdtela-principal/cadastro-funcionario.vue';
+import dashcentral from './assets/mdtela-principal/dash-central.vue';
+import HeaderComponent from './assets/mdtela-principal/header.vue';
+import blesquerda from './assets/mdtela-principal/bl-lateral.vue';
+import bldireita from './assets/mdtela-principal/bl-direita.vue';
+
 
 </script>
 
@@ -11,12 +11,12 @@ import cadastrof from  './assets/mdtela-principal/cadastro-funcionario.vue';
     <HeaderComponent></HeaderComponent>
     <blesquerda></blesquerda>
     <bldireita></bldireita>
-    <cadastrof></cadastrof>
-    <!-- <dashcentral></dashcentral> -->
-    
+    <dashcentral></dashcentral> 
 </template>
+
 <style scoped >
 body{
     background-color: white;
 }
+
 </style>

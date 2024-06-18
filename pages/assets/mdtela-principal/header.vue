@@ -2,9 +2,9 @@
   <div>
     <header class="header">
       <div class="left-icon">
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars">TeamUnity</i>
       </div>
-      <p class="header-text">TeamUnity</p>
+      <p class="header-text"></p>
       <div class="right-icon">
         <i class="fas fa-user"></i>
       </div>
@@ -39,7 +39,8 @@ export default {
 
 .left-icon, .right-icon {
   display: flex;
-  align-items: center;
+  margin-left: 22px;
+  align-items: left;
 }
 
 .header-text {
